@@ -1,6 +1,8 @@
-require('dotenv').config()
-const Server = require('./models/server')
+const express = require("express");
+const app = express() 
 
-const server = new Server();
+app.use(require('./route/pokemon-rou'))
 
-server.listen(); 
+app.listen(3000, ()=>{
+    console.log('server running at 3000')
+})
